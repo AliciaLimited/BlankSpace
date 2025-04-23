@@ -3,10 +3,14 @@ let i = 0;
 const speed = 70;
 
 function typeWriter() {
+  const element = document.getElementById("typewriter");
   if (i < text.length) {
-    document.getElementById("typewriter").innerHTML += text.charAt(i);
+    element.innerHTML += text.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
+  } else {
+    // Add blinking cursor at the end
+    element.innerHTML += '<span class="cursor">|</span>';
   }
 }
 
@@ -14,13 +18,13 @@ function notifyMe() {
   const email = prompt("Enter your email to be notified:");
   if (email) {
     alert("Thanks! We'll keep you updated.");
-    // You could store this somewhere later
+    // Email handling or backend logic can go here
   }
 }
 
 function enterSite() {
   alert("Coming soon...");
-  // You could redirect or animate here later
+  // Or window.location.href = "somepage.html";
 }
 
 window.onload = typeWriter;

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notify Me</title>
     <link rel="stylesheet" href="style.css" />
+      <script>
+    // Check if the user navigates directly to the page (without proper entry flow)
+    if (document.referrer === "") {
+      window.location.href = "index.html"; // Redirect to homepage if accessed directly
+    }
+  </script>
 </head>
 <body>
     <div class="container">
